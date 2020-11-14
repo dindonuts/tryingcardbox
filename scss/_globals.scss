@@ -1,0 +1,103 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url("/images/bg-pattern-top.svg"), url("/images/bg-pattern-bottom.svg");
+    background-position: -1% -150%, 10% 100%;
+    background-position: -240% -50%, 300% 150%;
+    background-size: 95%;
+    background-repeat: no-repeat, no-repeat;
+    background-color: $DarkCyan;
+    font-family: "Kumbh Sans", sans-serif;
+    display: grid;
+    color: $VeryDarkDesaturatedBlue;
+
+    @include breakpoint-up(large){
+        background-position: -16% -250%, 115% 400%;
+        background-size: 54%;
+    }
+}
+
+.container {
+    display: grid;
+    grid-row: 140px 100px 0px 90px;
+    justify-self: center;
+    align-self: center;
+    background-color: white;
+    width: 355px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &__background {
+        background-image: url("/images/bg-pattern-card.svg");
+        min-height: 140px;
+    }
+
+    &__image {
+        position: relative;
+        display: grid;
+        width: 100%;
+        top: -50%;
+
+        .image {
+            width: 100%;
+            justify-self: center;
+            background-image: url("/images/image-victor.jpg");
+            border-radius: 50%;
+            border: 5px solid white;
+            background-repeat: no-repeat;
+            background-position: center;
+            max-width: 100px;
+            min-height: 100px;
+        }
+    }
+
+    &__name {
+        position: relative;
+        background-color: white;
+        text-align: center;
+        top: -50%;
+
+        h2{
+            margin: 0;
+        }
+
+        h2 > span {
+            font-weight: 400;
+            color: $DarkGrayishBlue;
+            margin: 0;
+        }
+
+        p {
+            color: $DarkGrayishBlue;
+            margin-bottom: 0;
+        }
+    }
+
+    &__details {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        text-align: center;
+        border-top: 0.5px solid $DarkGray;
+
+        h2{ margin: 25px 0 0 0;
+            margin-bottom: 0;
+        }
+
+        p { margin-top: 10px;
+            color: $DarkGrayishBlue;
+        }
+    }
+}
